@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AvaliacaoCNPJ.Models;
+using AvaliacaoCNPJ.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AvaliacaoCNPJ.Controllers
@@ -40,8 +41,24 @@ namespace AvaliacaoCNPJ.Controllers
                 var resposta = response.Content.ReadAsStringAsync().Result;
                 ApiObjeto = Newtonsoft.Json.JsonConvert.DeserializeObject<ApiObjeto>(resposta);
             }
-          
-            return View(ApiObjeto);
+
+
+            if (ApiObjeto.Message != null)
+            {
+                TempData["erro"] = ApiObjeto.Message;
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                var viewModel = new CnpjFormViewModel
+                {
+                    Empresa = ApiObjeto,
+                    Atividade_principal = ApiObjeto.Atividade_principal,
+                    Atividade_secundaria = ApiObjeto.atividades_secundarias,
+                    Socio_adm = ApiObjeto.Qsa,
+                };
+                return View(viewModel);
+            }
         }
 
     }

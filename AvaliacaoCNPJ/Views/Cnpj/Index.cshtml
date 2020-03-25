@@ -1,6 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
+<style>
+    .alerta {
+	padding: 13px;
+	border: 1px solid gray;
+	border-radius: 3px;
+	margin: 10px;
+    margin-left: 0px;
+	font-size: 12px;
+}
+.error {
+	border-color: #e8273b;
+	color: #FFF;
+	background-color: #ed5565;
+}
+</style>
 <script type="text/javascript">
     $(document).ready(function () {
         $("input").on("keyup", function (e) {
@@ -22,10 +37,9 @@
     })
 </script>
 <h2>Cnpj</h2>
-
 <div class="row">
     <form asp-action="Cnpj">
-        <div class="form-group">
+        <div class="col-md-2">
             <input  id="txtCep" name="txtCep" class="form-control" />
         </div>
 
@@ -36,3 +50,6 @@
     </form>
 
 </div>
+@if(TempData["erro"] != null){
+<div class="alerta error">@TempData["erro"]</div>
+}

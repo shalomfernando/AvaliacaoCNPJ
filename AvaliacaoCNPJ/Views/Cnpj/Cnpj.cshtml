@@ -1,4 +1,4 @@
-﻿@model AvaliacaoCNPJ.Models.ApiObjeto
+﻿@model AvaliacaoCNPJ.Models.ViewModels.CnpjFormViewModel
 @{
     ViewData["Title"] = "Cnpj";
 }
@@ -9,16 +9,16 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Status)
+                    @Html.DisplayNameFor(model => model.Empresa.Status)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Message)
+                    @Html.DisplayNameFor(model => model.Empresa.Message)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Cnpj)
+                    @Html.DisplayNameFor(model => model.Empresa.Cnpj)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Nome)
+                    @Html.DisplayNameFor(model => model.Empresa.Nome)
                 </th>
                 <th>
 
@@ -26,25 +26,293 @@
             </tr>
         </thead>
         <tbody>
-           
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Message)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Cnpj)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Nome)
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Tipo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Abertura)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Fantasia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Natureza_juridica)
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Tipo)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Abertura)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Fantasia)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Natureza_juridica)
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Logradouro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Numero)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Complemnto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Cep)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Bairro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Municipio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Uf)
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Logradouro)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Numero)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Complemnto)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Cep)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Bairro)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Municipio)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Uf)
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Telefone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Situacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Data_situacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Motivo_situacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Situacao_especial)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Data_situacao_especial)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empresa.Capital_social)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Email)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Telefone)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Situacao)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Data_situacao)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Motivo_situacao)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Situacao_especial)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Data_situacao_especial)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Empresa.Capital_social)
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Codigo
+                </th>
+                <th>
+                    Texto
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Empresa.Atividade_principal)
+            {
                 <tr>
                     <td>
-                        <input asp-for="Status" class="form-control" />
-
+                        @Html.DisplayFor(modelItem => item.Code)
                     </td>
                     <td>
-                        <input asp-for="Message" class="form-control" />
-
-                    </td>
-                    <td>
-                        <input asp-for="Cnpj" class="form-control" />
-
-                    </td>
-                    <td>
-                        <input asp-for="Nome" class="form-control" />
-
+                        @Html.DisplayFor(modelItem => item.Text)
                     </td>
                 </tr>
+            }
+        </tbody>
+    </table>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Codigo
+                </th>
+                <th>
+                    Texto
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Empresa.atividades_secundarias)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Code)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Nome do sócio
+                </th>
+                <th>
+                    Qualificação do sócio
+                </th>
+                <th>
+                    País de origem
+                </th>
+                <th>
+                    Nome do representante legal
+                </th>
+                <th>
+                    Qualificação do representante legal
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Empresa.Qsa)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qual)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pais_origem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome_rep_legal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qual_rep_legal)
+                </td>
+            </tr>
+            }
         </tbody>
     </table>
 </div>
