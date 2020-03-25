@@ -1,11 +1,10 @@
-﻿
+﻿@model AvaliacaoCNPJ.Models.CnpjTO
 @{
     ViewData["Title"] = "Index";
 }
 <script type="text/javascript">
-        $(document).ready(function () {
-        $("input").on("keyup", function(e)
-            {
+    $(document).ready(function () {
+        $("input").on("keyup", function (e) {
             $(this).val(
                 $(this).val()
                     .replace(/\D/g, '')
@@ -19,34 +18,26 @@
             cnpj = cnpj.replace("/", "");
             cnpj = cnpj.replace(".", "");
 
-            var url = "https://www.receitaws.com.br/v1/cnpj/" + cnpj + ""
-            $.ajax({
-                url: url,
-                type: "GET",
-                dataType: "json",
-                success: function (data) {
-                     $.ajax({
-                            url: '@Url.Action("GetCnpj","Cnpj")',
-                            type: "POST",
-                            contentType: "application/json",
-                            data: { Cnpj: data },
-            })
-                },
-                error: function (error) {
-                    console.log(error);
-                    alert("algo deu errado")
-                }
-            })
+
         })
     })
 </script>
 <h2>Cnpj</h2>
 
+<p>
+    <a asp-action="Cnpj" class="btn btn-default">CNp</a>
+</p>
+
 <div class="row">
-    <div class="col-md-2">
-        @Html.TextBox("txtCep", null, new { @class = "form-control" })
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-success" id="btnSend">Consultar</button>
-    </div>
+    <form asp-action="Cnpj">
+        <div class="form-group">
+            <input asp-for="Cnpj" id="txtCep" class="form-control" />
+        </div>
+
+        <div class="col-md-2">
+            <button class="btn btn-success" id="btnSend">Consultar</button>
+        </div>
+
+    </form>
+
 </div>

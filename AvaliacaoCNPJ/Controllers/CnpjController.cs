@@ -5,7 +5,6 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using AvaliacaoCNPJ.Models;
-using AvaliacaoCNPJ.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AvaliacaoCNPJ.Controllers
@@ -14,20 +13,30 @@ namespace AvaliacaoCNPJ.Controllers
     {
         static HttpClient client = new HttpClient();
 
-        CnpjService cnpjService;
-
         public IActionResult Index()
         {
             return View();
         }
-        public Empresa GetCnpj(string cnpj)
+        public IActionResult Cnpj()
         {
-            return cnpjService.ConvertObjJson(cnpj) ;
+            return View();
         }
 
-        public IActionResult Cnpj(Empresa em)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Cnpj(CnpjTO cnpj)
         {
-            return View(em);
+            string apiUrl = "https://www.receitaws.com.br/v1/cnpj/06323467000159";
+            var ApiObjeto = new ApiObjeto();
+
+            using(HttpClient client = new HttpClient())
+            {
+                var response = client.GetAsync(apiUrl).Result;
+                var resposta = response.Content.ReadAsStringAsync().Result;
+                ApiObjeto = Newtonsoft.Json.JsonConvert.DeserializeObject<ApiObjeto>(resposta);
+            }
+          
+            return View(ApiObjeto);
         }
 
     }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AvaliacaoCNPJ.Models.Empresa>
+﻿@model AvaliacaoCNPJ.Models.ApiObjeto
 @{
     ViewData["Title"] = "Cnpj";
 }
@@ -9,16 +9,16 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.NumeroInscricao)
+                    @Html.DisplayNameFor(model => model.Status)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.UltimaAtualizacao)
+                    @Html.DisplayNameFor(model => model.Message)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.NomeEmpresa)
+                    @Html.DisplayNameFor(model => model.Cnpj)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.NomeFantasia)
+                    @Html.DisplayNameFor(model => model.Nome)
                 </th>
                 <th>
 
@@ -26,23 +26,25 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
+           
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.NumeroInscricao)
+                        <input asp-for="Status" class="form-control" />
+
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.UltimaAtualizacao)
+                        <input asp-for="Message" class="form-control" />
+
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.NomeEmpresa)
+                        <input asp-for="Cnpj" class="form-control" />
+
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.NomeFantasia)
+                        <input asp-for="Nome" class="form-control" />
+
                     </td>
                 </tr>
-            }
         </tbody>
     </table>
 </div>
