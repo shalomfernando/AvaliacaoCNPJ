@@ -1,5 +1,4 @@
-﻿@model AvaliacaoCNPJ.Models.CnpjTO
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
 <script type="text/javascript">
@@ -24,14 +23,10 @@
 </script>
 <h2>Cnpj</h2>
 
-<p>
-    <a asp-action="Cnpj" class="btn btn-default">CNp</a>
-</p>
-
 <div class="row">
     <form asp-action="Cnpj">
         <div class="form-group">
-            <input asp-for="Cnpj" id="txtCep" class="form-control" />
+            <input  id="txtCep" name="txtCep" class="form-control" />
         </div>
 
         <div class="col-md-2">

@@ -24,9 +24,14 @@ namespace AvaliacaoCNPJ.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Cnpj(CnpjTO cnpj)
+        public IActionResult Cnpj(string txtCep)
         {
-            string apiUrl = "https://www.receitaws.com.br/v1/cnpj/06323467000159";
+            if (txtCep == "")
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            txtCep = txtCep.Replace(".", "").Replace("-", "").Replace("/", "").Replace(" ", "");
+            string apiUrl = "https://www.receitaws.com.br/v1/cnpj/" + txtCep;
             var ApiObjeto = new ApiObjeto();
 
             using(HttpClient client = new HttpClient())
