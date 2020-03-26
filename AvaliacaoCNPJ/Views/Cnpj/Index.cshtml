@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<AvaliacaoCNPJ.Models.ApiObjeto>
+
+@{
     ViewData["Title"] = "Index";
 }
 <style>
@@ -53,3 +55,34 @@
 @if(TempData["erro"] != null){
 <div class="alerta error">@TempData["erro"]</div>
 }
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cnpj)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cnpj)
+            </td>
+           
+        </tr>
+        }
+    </tbody>
+
+</table>

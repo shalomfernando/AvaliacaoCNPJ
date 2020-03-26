@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AvaliacaoCNPJ.Data;
+using AvaliacaoCNPJ.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -45,6 +48,10 @@ namespace AvaliacaoCNPJ
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContext<CnpjWebMvcContext>(options =>
+                    options.UseMySql(Configuration.GetConnectionString("CnpjWebMvcContext"), builder =>
+                    builder.MigrationsAssembly("AvaliacaoCNPJ")));
+            services.AddScoped<CnpjService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

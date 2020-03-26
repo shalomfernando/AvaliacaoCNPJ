@@ -7,6 +7,7 @@ namespace AvaliacaoCNPJ.Models
 {
     public class ApiObjeto
     {
+        public int Id { get; set; }
         public string Status { get; set; }
         public string Message { get; set; }
         public Billing Billing { get; set; }
@@ -35,14 +36,14 @@ namespace AvaliacaoCNPJ.Models
         public ICollection<Qsa> Qsa { get; set; } = new List<Qsa>();
         public ICollection<Atividade_principal> Atividade_principal { get; set; } = new List<Atividade_principal>();
         public ICollection<Atividades_secundarias> atividades_secundarias { get; set; } = new List<Atividades_secundarias>();
-        public object Extra { get; set; }
 
         public ApiObjeto()
         {
         }
 
-        public ApiObjeto(string status, string message, Billing billing, string cnpj, string tipo, string abertura, string nome, string fantasia, string natureza_juridica, string logradouro, string numero, string complemnto, string cep, string bairro, string municipio, string uf, string email, string telefone, string efr, string situacao, string data_situacao, string motivo_situacao, string situacao_especial, string data_situacao_especial, string capital_social, object extra)
+        public ApiObjeto(int id, string status, string message, Billing billing, string cnpj, string tipo, string abertura, string nome, string fantasia, string natureza_juridica, string logradouro, string numero, string complemnto, string cep, string bairro, string municipio, string uf, string email, string telefone, string efr, string situacao, string data_situacao, string motivo_situacao, string situacao_especial, string data_situacao_especial, string capital_social, object extra)
         {
+            Id = id;
             Status = status;
             Message = message;
             Billing = billing;
@@ -68,7 +69,20 @@ namespace AvaliacaoCNPJ.Models
             Situacao_especial = situacao_especial;
             Data_situacao_especial = data_situacao_especial;
             Capital_social = capital_social;
-            Extra = extra;
         }
+
+        public void AddAtividadePrincipal(Atividade_principal atividade)
+        {
+            Atividade_principal.Add(atividade);
+        }
+        public void AddAtividadesSecundarias(Atividades_secundarias atividade)
+        {
+            atividades_secundarias.Add(atividade);
+        }
+        public void AddQsa(Qsa qsa)
+        {
+            Qsa.Add(qsa);
+        }
+
     }   
 }

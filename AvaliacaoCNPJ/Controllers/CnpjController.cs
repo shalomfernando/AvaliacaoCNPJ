@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using AvaliacaoCNPJ.Models;
 using AvaliacaoCNPJ.Models.ViewModels;
+using AvaliacaoCNPJ.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AvaliacaoCNPJ.Controllers
@@ -13,10 +14,18 @@ namespace AvaliacaoCNPJ.Controllers
     public class CnpjController : Controller
     {
         static HttpClient client = new HttpClient();
+        private ApiObjeto obSave;
+        private readonly CnpjService _cnpjService;
+
+        public CnpjController(CnpjService cnpjService)
+        {
+            _cnpjService = cnpjService;
+        }
 
         public IActionResult Index()
         {
-            return View();
+            var list = _cnpjService.FindAll();
+            return View(list);
         }
         public IActionResult Cnpj()
         {
@@ -59,6 +68,14 @@ namespace AvaliacaoCNPJ.Controllers
                 };
                 return View(viewModel);
             }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Save(CnpjFormViewModel objeto)
+        {
+             obSave = objeto.Empresa;
+            _cnpjService.Insert(obSave);
+            return RedirectToAction(nameof(Index));
         }
 
     }
