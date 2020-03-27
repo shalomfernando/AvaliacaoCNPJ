@@ -3,324 +3,332 @@
     ViewData["Title"] = "Cnpj";
 }
 <h2>Cnpj</h2>
-<div class="row">
-    <form asp-action="Save">
+<form action="~/Cnpj/Save" method="post">
+    <div class="row">
+
+
+
+        @*@Html.LabelFor(x => x.Empresa.Cnpj)
+        @Html.TextBoxFor(x => x.Empresa.Cnpj)*@
         <div class="col-md-2">
-            <button class="btn btn-success" id="btnSend">Salvar no banco</button>
+            <button class="btn btn-success" id="btnSend" type="submit">Salvar no banco</button>
         </div>
-    </form>
 
-</div>
-<div class="row">
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Status)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Message)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Cnpj)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Nome)
-                </th>
-                <th>
+    </div>
 
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+    <div>
+        <div class="row">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Message)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Cnpj)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Nome)
+                        </th>
+                        <th>
 
-            <tr>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Status)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Message)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Cnpj)
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Status)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Message)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Nome)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Cnpj)
 
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Tipo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Abertura)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Fantasia)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Natureza_juridica)
-                </th>
-                <th>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Nome)
 
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Tipo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Abertura)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Fantasia)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Natureza_juridica)
+                        </th>
+                        <th>
 
-            <tr>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Tipo)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Abertura)
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Tipo)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Fantasia)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Abertura)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Natureza_juridica)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Fantasia)
 
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Logradouro)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Numero)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Complemnto)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Cep)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Bairro)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Municipio)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Uf)
-                </th>
-                <th>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Natureza_juridica)
 
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Logradouro)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Numero)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Complemnto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Cep)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Bairro)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Municipio)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Uf)
+                        </th>
+                        <th>
 
-            <tr>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Logradouro)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Numero)
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Logradouro)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Complemnto)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Numero)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Cep)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Complemnto)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Bairro)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Cep)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Municipio)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Bairro)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Uf)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Municipio)
 
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Telefone)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Situacao)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Data_situacao)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Motivo_situacao)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Situacao_especial)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Data_situacao_especial)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Empresa.Capital_social)
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Uf)
 
-            <tr>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Email)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Telefone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Situacao)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Data_situacao)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Motivo_situacao)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Situacao_especial)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Data_situacao_especial)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Empresa.Capital_social)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Telefone)
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Email)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Situacao)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Telefone)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Data_situacao)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Situacao)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Motivo_situacao)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Data_situacao)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Situacao_especial)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Motivo_situacao)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Data_situacao_especial)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Situacao_especial)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Empresa.Capital_social)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Data_situacao_especial)
 
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(model => model.Empresa.Capital_social)
 
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>
-                    Codigo
-                </th>
-                <th>
-                    Texto
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Empresa.Atividade_principal)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Code)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Text)
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>
-                    Codigo
-                </th>
-                <th>
-                    Texto
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Empresa.atividades_secundarias)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Code)
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Codigo
+                        </th>
+                        <th>
+                            Texto
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Empresa.Atividade_principal)
+                    {
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(modelItem => item.Code)
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(modelItem => item.Text)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
 
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Text)
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>
-                    Nome do sócio
-                </th>
-                <th>
-                    Qualificação do sócio
-                </th>
-                <th>
-                    País de origem
-                </th>
-                <th>
-                    Nome do representante legal
-                </th>
-                <th>
-                    Qualificação do representante legal
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Empresa.Qsa)
-            {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Codigo
+                        </th>
+                        <th>
+                            Texto
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Empresa.atividades_secundarias)
+                    {
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(modelItem => item.Code)
 
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Qual)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.pais_origem)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome_rep_legal)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Qual_rep_legal)
-                </td>
-            </tr>
-            }
-        </tbody>
-    </table>
-</div>
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(modelItem => item.Text)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Nome do sócio
+                        </th>
+                        <th>
+                            Qualificação do sócio
+                        </th>
+                        <th>
+                            País de origem
+                        </th>
+                        <th>
+                            Nome do representante legal
+                        </th>
+                        <th>
+                            Qualificação do representante legal
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Empresa.Qsa)
+                    {
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(modelItem => item.Nome)
+
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(modelItem => item.Qual)
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(modelItem => item.pais_origem)
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(modelItem => item.Nome_rep_legal)
+                            </td>
+                            <td>
+                                @Html.TextBoxFor(modelItem => item.Qual_rep_legal)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+</form>
+
 

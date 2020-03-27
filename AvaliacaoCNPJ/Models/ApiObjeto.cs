@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AvaliacaoCNPJ.Models.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -41,34 +42,34 @@ namespace AvaliacaoCNPJ.Models
         {
         }
 
-        public ApiObjeto(int id, string status, string message, Billing billing, string cnpj, string tipo, string abertura, string nome, string fantasia, string natureza_juridica, string logradouro, string numero, string complemnto, string cep, string bairro, string municipio, string uf, string email, string telefone, string efr, string situacao, string data_situacao, string motivo_situacao, string situacao_especial, string data_situacao_especial, string capital_social, object extra)
+
+        public ApiObjeto(CnpjFormViewModel cnpjForm)
         {
-            Id = id;
-            Status = status;
-            Message = message;
-            Billing = billing;
-            Cnpj = cnpj;
-            Tipo = tipo;
-            Abertura = abertura;
-            Nome = nome;
-            Fantasia = fantasia;
-            Natureza_juridica = natureza_juridica;
-            Logradouro = logradouro;
-            Numero = numero;
-            Complemnto = complemnto;
-            Cep = cep;
-            Bairro = bairro;
-            Municipio = municipio;
-            Uf = uf;
-            Email = email;
-            Telefone = telefone;
-            Efr = efr;
-            Situacao = situacao;
-            Data_situacao = data_situacao;
-            Motivo_situacao = motivo_situacao;
-            Situacao_especial = situacao_especial;
-            Data_situacao_especial = data_situacao_especial;
-            Capital_social = capital_social;
+            Status = cnpjForm.Empresa.Status;
+            Message = cnpjForm.Empresa.Message;
+            Billing = cnpjForm.Empresa.Billing;
+            Cnpj = cnpjForm.Empresa.Cnpj;
+            Tipo = cnpjForm.Empresa.Tipo;
+            Abertura = cnpjForm.Empresa.Abertura;
+            Nome = cnpjForm.Empresa.Nome;
+            Fantasia = cnpjForm.Empresa.Fantasia;
+            Natureza_juridica = cnpjForm.Empresa.Natureza_juridica;
+            Logradouro = cnpjForm.Empresa.Logradouro;
+            Numero = cnpjForm.Empresa.Numero;
+            Complemnto = cnpjForm.Empresa.Complemnto;
+            Cep = cnpjForm.Empresa.Cep;
+            Bairro = cnpjForm.Empresa.Bairro;
+            Municipio = cnpjForm.Empresa.Municipio;
+            Uf = cnpjForm.Empresa.Uf;
+            Email = cnpjForm.Empresa.Email;
+            Telefone = cnpjForm.Empresa.Telefone;
+            Efr = cnpjForm.Empresa.Efr;
+            Situacao = cnpjForm.Empresa.Situacao;
+            Data_situacao = cnpjForm.Empresa.Data_situacao;
+            Motivo_situacao = cnpjForm.Empresa.Motivo_situacao;
+            Situacao_especial = cnpjForm.Empresa.Situacao_especial;
+            Data_situacao_especial = cnpjForm.Empresa.Data_situacao_especial;
+            Capital_social = cnpjForm.Empresa.Capital_social;
         }
 
         public void AddAtividadePrincipal(Atividade_principal atividade)

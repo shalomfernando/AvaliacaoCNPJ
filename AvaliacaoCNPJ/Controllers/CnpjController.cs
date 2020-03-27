@@ -36,15 +36,17 @@ namespace AvaliacaoCNPJ.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Cnpj(string txtCep)
         {
-            if (txtCep == "")
+            if (txtCep == null)
             {
+                TempData["erro"] = "Digite um numero valido";
                 return RedirectToAction(nameof(Index));
             }
             txtCep = txtCep.Replace(".", "").Replace("-", "").Replace("/", "").Replace(" ", "");
             string apiUrl = "https://www.receitaws.com.br/v1/cnpj/" + txtCep;
             var ApiObjeto = new ApiObjeto();
 
-            using(HttpClient client = new HttpClient())
+
+            using (HttpClient client = new HttpClient())
             {
                 var response = client.GetAsync(apiUrl).Result;
                 var resposta = response.Content.ReadAsStringAsync().Result;
@@ -59,6 +61,8 @@ namespace AvaliacaoCNPJ.Controllers
             }
             else
             {
+                //ViewData.Add("ApiObjeto", ApiObjeto);
+                ViewBag.ApiObjeto = ApiObjeto;
                 var viewModel = new CnpjFormViewModel
                 {
                     Empresa = ApiObjeto,
@@ -71,9 +75,11 @@ namespace AvaliacaoCNPJ.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Save(CnpjFormViewModel objeto)
+        public ActionResult Save(CnpjFormViewModel modelo)
         {
-             obSave = objeto.Empresa;
+
+            ApiObjeto apiObjeto = modelo.Empresa;
+            obSave = apiObjeto;
             _cnpjService.Insert(obSave);
             return RedirectToAction(nameof(Index));
         }
